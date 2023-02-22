@@ -1,0 +1,7 @@
+{
+    "eventType": "PurchaseOrder",
+    "product": "Phone", 
+    "Price": "350",
+    "PurchasDate": "21/01/2022",
+    "Warranty": "1 year"
+}

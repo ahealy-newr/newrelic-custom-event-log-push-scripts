@@ -1,0 +1,9 @@
+{
+    "Device": "MAC-A23435",
+    "DeviceDetails": {
+        "type": "iPhone",
+        "model": "13 Pro",
+        "OS": "iOS 16"
+    }, 
+    "message": "Device has crashed"
+}
