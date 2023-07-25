@@ -11,8 +11,19 @@ print(event_data)
 # Closing file
 f.close()
 
-# US Event API endpoint. Note: You will need to your replace the XXXX with your New Relic Account Id
-us_endpoint = "https://insights-collector.newrelic.com/v1/accounts/XXXXX/events"
+# Note: Change this if you're using an EU account.
+use_eu_endpoint = False
+# Note: You will need to your replace the XXXX with your New Relic Account Id
+account_id = 'XXXX'
+
+# Event API endpoints.
+us_endpoint = f'https://insights-collector.newrelic.com/v1/accounts/{account_id}/events'
+eu_endpoint = f'https://insights-collector.eu01.nr-data.net/v1/accounts/{account_id}/events'
+
+endpoint = us_endpoint
+if use_eu_endpoint:
+  endpoint = eu_endpoint
+
 headers = {'API-Key': f'{license_key}'}
-response = requests.post(us_endpoint, headers=headers, json=event_data)
+response = requests.post(endpoint, headers=headers, json=event_data)
 print(response)
