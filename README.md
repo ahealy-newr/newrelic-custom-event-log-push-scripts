@@ -6,7 +6,7 @@
 ### Prerequisites
 Before using these scripts, you will need to:
 1. Have a New Relic account and New Relic API Licence key.
-2. Have Python 3 installed on your system.
+2. Have Python 3.9 or higher installed on your system.
 
 ### CustomEvents
 `py_event_push.py`: A Python script for pushing events to New Relic Insights using the Events API. <br>
@@ -18,7 +18,7 @@ Before using these scripts, you will need to:
 
 ### Usage
 Before running the scripts make sure to:
-1. Update the licence.py file with your license key
+1. Update the conf.py file with your license key, datacentre and account id that you are targeting
 2. For the py_push_event.py script, update the account id in the url value
 
 To use the py_event_push.py and py_log_push.py script directly, simply run:
