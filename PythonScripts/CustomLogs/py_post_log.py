@@ -2,7 +2,7 @@ import requests
 import json
 import sys
 sys.path.insert(1, '../../')
-from PythonScripts.license import license_key
+from PythonScripts.conf import license_key, datacentre
 
 #log_msg = "log message"
 # Opening JSON file
@@ -12,8 +12,12 @@ print(log_msg)
 # Closing file
 f.close()
 
-# Log API endpoint 
-us_endpoint = "https://log-api.newrelic.com/log/v1"
+# Log API endpoints.
+if datacentre == 'us':
+  endpoint = f'https://log-api.newrelic.com/log/v1'
+else:
+  endpoint = f'https://log-api.eu.newrelic.com/log/v1'
+
 headers = {'API-Key': f'{license_key}'}
-response = requests.post(us_endpoint, headers=headers, json=log_msg)
+response = requests.post(endpoint, headers=headers, json=log_msg)
 print(response)
